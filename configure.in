@@ -1,0 +1,38 @@
+AC_INIT(actuators.c)
+AM_INIT_AUTOMAKE(paranormal,0.2.0)
+AM_CONFIG_HEADER(config.h)
+
+AM_DISABLE_STATIC
+
+AC_PROG_CC
+AC_ISC_POSIX
+AC_PROG_INSTALL
+AM_PROG_LIBTOOL
+
+dnl
+dnl FIXME: I'm not sure what xmms version is req'ed yet, so I'll just use mine for now
+dnl same w/ SDL
+dnl
+AM_PATH_XMMS(1.2.4,,AC_MSG_ERROR([*** XMMS >= 1.2.4 not installed - please install first ***]))
+AM_PATH_GLIB(1.2.2,,AC_MSG_ERROR([*** GLIB >= 1.2.2 not installed - please install first ***]))
+AM_PATH_GTK(1.2.2,,AC_MSG_ERROR([*** GTK+ >= 1.2.2 not installed - please install first ***]))
+AM_PATH_XML(2.0.0,,AC_MSG_ERROR([*** LIBXML >= 2.0.0 not installed - please install first ***]))
+AM_PATH_SDL(1.0.0,,AC_MSG_ERROR([*** SDL >= 1.0.0 not installed - please install first ***]))
+
+AC_HEADER_STDC
+
+AC_ARG_ENABLE(profiling,[  --enable-profiling  use -pg flag when compiling [default=no]],,
+enable_profiling="no")
+if test "x$enable_profiling" = "xyes"; then
+	CFLAGS="$CFLAGS -pg"
+	AC_SUBST(CFLAGS)
+fi
+
+AC_MSG_CHECKING(machine architecture)
+AC_SUBST(ARCH_TYPE)
+ARCH_TYPE=`uname -m`
+AC_MSG_RESULT($ARCH_TYPE)
+
+AM_CONDITIONAL(ARCH_X86,test "$ARCH_TYPE" = "i386" || test "$ARCH_TYPE" = "i486" || test "$ARCH_TYPE" = "i586" || test "$ARCH_TYPE" = "i686" || test "$ARCH_TYPE" = "i86pc")
+
+AC_OUTPUT(Makefile)

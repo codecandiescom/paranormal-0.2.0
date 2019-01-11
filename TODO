@@ -1,0 +1,32 @@
+Just some random ideas I had...
+
+keypress callbacks to allow actuators to respond to keypresses
+	- allow more than 1 callback per key?
+	- allow xmms.c to hook into it and pass the keys back
+	to xmms
+
+have a throttle in the config to allow for mass-disabling of
+actuators based on a 'speed rating' they are given (hard coded by
+developer)
+
+Add support for parallelizable actuators
+
+Actuator groups
+
+Add outputting default options values to pndoc
+
+Write MMX-enabled versions of apply_xform, blur_exec
+
+Ideas for actuators:
+	A container that cycles through or randomly switches
+		bewteen its containees - also have it add a
+		keyboard hook for letting the user trigger a
+		switch (either random or cycling)
+	An actuator that executes a .pna file - how to handle
+		recursion - a can't call list?
+
+There's a bug causing a segfault when the window is resized to
+	be very small... FIX IT ;)
+
+Allow actuators to have a 'prepare' function that can be called
+incrementally or when the window is resized

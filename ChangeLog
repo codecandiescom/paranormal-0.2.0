@@ -1,0 +1,93 @@
+05-13-01  Jamie Gennis <jgennis@mindspring.com>
+
+	  * added a default preset to xmms.c
+	  * updated README for 0.2.0 release
+	  * bumped version number in configure.in up to 0.2.0
+	  * converted container_simple and container_once to use
+	  PN_ACTUATOR_*_FUNC macros
+	  * added PN_ACTUATOR_*_FUNC macros to actuators.h
+	  * implimented save button in actuator config dialog
+	  * added save_preset() to presets.c
+
+05-11-01  Jamie Gennis <jgennis@mindspring.com>
+
+	  * implimented the 'load' button in the config dialog
+	  * load_pn_rc in xmms.c no longer tries to load test.pna
+	  * fixed config dialog's cancel button making the config dialog
+	  inaccessable
+	
+05-10-01  Jamie Gennis <jgennis@mindspring.com>
+
+	  * added container_cycle
+	  * added SDL_INIT_TIMER to SDL_Init () call in paranormal.c
+	
+05-08-01  Jamie Gennis <jgennis@mindspring.com>
+
+	  * added xform_bump_spin actuator
+	  * fixed cmap_bwgradient not changing the high index
+	  of the colormap
+	
+05-06-01  Jamie Gennis <jgennis@mindspring.com>
+
+	  * fixed a mem leak in the container cleanup functions
+	  * fixed a mem leak in xform cleanup functions
+	  * decided to stop smoking crack before I code cleanup functions
+	
+05-02-01  Jamie Gennis <jgennis@mindspring.com>
+
+	  * added changes to the wave functions for handling both channels
+	  from Sam Vaughn <vaughns@purdue.edu>
+	  * got cfg.c working! ;)
+	
+04-29-01  Jamie Gennis <jgennis@mindspring.com>
+
+	  * renamed fade and blur actuators to general_fade and
+	  general_blur, (respectively) ;)
+	  * more stuffs in cfg.c (still non-functional)
+	  * added container_remove() to containers.c
+	  * added copy_actuator() to actuators.c
+	
+04-28-01  Jamie Gennis <jgennis@mindspring.com>
+
+	  * added cfg.c to EXEC_SOURCES in Makefile.am
+	  * wrote initial cfg.c (non-functional)
+	  * changed xmms.c to call pn_configure() for pn_xmms_configure
+
+04-26-01  Jamie Gennis <jgennis@mindspring.com>
+
+	  * added 'paranormal' executable to Makefile.am
+	  * wrote a primitive standalone.c
+	  * added --enable-profiling option to configure.in
+	  * speedup in apply_xform and blur_exec
+	
+04-25-01  Jamie Gennis <jgennis@mindspring.com>
+
+	  * released paranormal 0.1.0
+	  * added OPT_TYPE_BOOLEAN
+	  * added sin_val[] and cos_val[] global precomputed arrays
+	  * added wave_radial builtin by Josh Newton <newtonj@purdue.edu>
+	  * added primitive wave_normalize and wave_smooth builtins
+	  * fixed dates in ChangeLog (they were ahead 1 day) ;)
+	  * updated configure.in for 0.1.0 release
+	
+04-24-01  Jamie Gennis <jgennis@mindspring.com>
+
+	  * added resizability to paranormal.c
+	  * cleanups in paranormal.c
+	  * added xform_ripple builtin
+	  * the nonfatal error reporting window is no longer
+	  persistent between enables
+	
+04-23-01  Jamie Gennis <jgennis@mindspring.com>
+
+	  * made the xform_vector struct a little smaller
+	  * speedup in apply_xform
+	  * blit_to_screen now uses SDL 'hardware' palette
+	  * added -l option to pndoc for listing builtins
+	  * fixed a bug in apply_xform that caused image artifacts
+	  * speedup in blur_exec
+
+04-22-01  Jamie Gennis <jgennis@mindspring.com>
+
+	  * wrote initial xform code
+	  * made the first ChangeLog entry ;)
